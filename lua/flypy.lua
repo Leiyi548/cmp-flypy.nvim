@@ -50,6 +50,8 @@ function source:is_available()
 			return context.in_treesitter_capture("comment")
 				or context.in_syntax_group("Comment")
 				or context.in_treesitter_capture("string_literal")
+				or context.in_treesitter_capture("string")
+				or context.in_syntax_group("String")
 		else
 			return context.in_treesitter_capture("comment") or context.in_syntax_group("Comment")
 		end
